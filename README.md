@@ -52,22 +52,24 @@ network={
 go here for details 
 <p>
 login from term window
-
+<p>
 ssh-keygen -R raspberrypi.local
+<p>
 ssh pi@raspberrypi.local
-default 
-username:pi
-password:raspberry
-
-this is the default password chand to sontung else with
+the default username is pi. The password is "raspberry"
+this is the default password. Change to something else with<p>
 ->passwd
 
-run 
-	sudo raspi-config
-	select 7 advance options
-	select A1 
-	Expand filesystem
-do and update and add git
+run <p>
+sudo raspi-config<p>
+select 7 advance options<p>
+select A1 <p>
+Expand filesystem<p>
+do and update and add git<p>
+
+
+
+
 sudo apt-get update
 sudo apt-get -y install git
 sudo git clone https://github.com/specialed1790/pi_zero_w.git
