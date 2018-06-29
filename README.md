@@ -19,22 +19,24 @@ use the SD card from the RPi2 with an RPi0.
 
 Download Raspbian strech lite
 <code>
-https://www.raspberrypi.org/downloads/raspbian/
+<p>https://www.raspberrypi.org/downloads/raspbian/<p>
 </code>
+<p>
 unzip the file 2018-04-18-raspbian-stretch-lite.zip to 
 2018-04-18-raspbian-stretch-lite.img
-
+<p>
 Isert into sdcard reader then copy to disk. use lsblk to locate correct device see details here
-
+<p>
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
-
+<p>
 On linux use lsblk to find the correct device sdcard interface
+<code><p>
 dd bs=4M if=2018-04-18-raspbian-stretch-lite.img of=/dev/sdX conv=fsync status=progress
-
+</code>
 when copy is complete add the following files
-<code>
-sudo touch /media/username/boot/ssh
-sudo nano /media/username/boot/wpa_supplicant.conf
+<code><p>
+sudo touch /media/username/boot/ssh<p>
+sudo nano /media/username/boot/wpa_supplicant.conf<p>
 </code>
 edit wpa_supplicant.conf with youre wifi config
 
@@ -46,9 +48,9 @@ network={
     ssid="NETWORK-NAME"
     psk="NETWORK-PASSWORD"
 }
-
+<p>
 go here for details 
-
+<p>
 login from term window
 
 ssh-keygen -R raspberrypi.local
