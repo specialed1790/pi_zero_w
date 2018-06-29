@@ -17,6 +17,62 @@ when the two boards share similar processors and/or hardware. E.g. it's
 possible to use the setup script to install stratux on an RPi2 board then
 use the SD card from the RPi2 with an RPi0.
 
+Download Raspbian strech lite
+https://www.raspberrypi.org/downloads/raspbian/
+
+unzip the file 2018-04-18-raspbian-stretch-lite.zip to 
+2018-04-18-raspbian-stretch-lite.img
+
+Isert into sdcard reader then copy to disk. use lsblk to locate correct device see details here
+
+https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
+
+On linux use lsblk to find the correct device sdcard interface
+dd bs=4M if=2018-04-18-raspbian-stretch-lite.img of=/dev/sdX conv=fsync status=progress
+
+when copy is complete add the following files
+
+sudo touch /media/username/boot/ssh
+sudo nano /media/username/boot/wpa_supplicant.conf
+
+edit wpa_supplicant.conf with youre wifi config
+
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="NETWORK-NAME"
+    psk="NETWORK-PASSWORD"
+}
+
+go here for details 
+
+login from term window
+
+ssh-keygen -R raspberrypi.local
+ssh pi@raspberrypi.local
+default 
+username:pi
+password:raspberry
+
+this is the default password chand to sontung else with
+->passwd
+
+run 
+	sudo raspi-config
+	select 7 advance options
+	select A1 
+	Expand filesystem
+do and update and add git
+sudo apt-get update
+sudo apt-get -y install git
+sudo git clone https://github.com/specialed1790/pi_zero_w.git
+cd pi_zero_w
+sudo bash stratux-setup.sh
+sudo shutdown -r now
+
+
 
 Commands to run the setup script:
 
