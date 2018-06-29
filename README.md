@@ -38,6 +38,7 @@ when copy is complete add the following files
 sudo touch /media/username/boot/ssh<p>
 sudo nano /media/username/boot/wpa_supplicant.conf<p>
 </code>
+Inser your wifi network password and ssis
 edit wpa_supplicant.conf with youre wifi config
 
 country=US
@@ -54,9 +55,9 @@ go here for details
 login from term window
 <p>
 ssh-keygen -R raspberrypi.local
-<p>
-ssh pi@raspberrypi.local
-the default username is pi. The password is "raspberry"
+<p></code>
+ssh pi@raspberrypi.local<p>
+the default username is pi. The password is "raspberry"<p>
 this is the default password. Change to something else with<p>
 ->passwd
 
