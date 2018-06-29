@@ -18,8 +18,9 @@ possible to use the setup script to install stratux on an RPi2 board then
 use the SD card from the RPi2 with an RPi0.
 
 Download Raspbian strech lite
+<code>
 https://www.raspberrypi.org/downloads/raspbian/
-
+</code>
 unzip the file 2018-04-18-raspbian-stretch-lite.zip to 
 2018-04-18-raspbian-stretch-lite.img
 
@@ -31,10 +32,10 @@ On linux use lsblk to find the correct device sdcard interface
 dd bs=4M if=2018-04-18-raspbian-stretch-lite.img of=/dev/sdX conv=fsync status=progress
 
 when copy is complete add the following files
-
+<code>
 sudo touch /media/username/boot/ssh
 sudo nano /media/username/boot/wpa_supplicant.conf
-
+</code>
 edit wpa_supplicant.conf with youre wifi config
 
 country=US
