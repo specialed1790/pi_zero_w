@@ -25,7 +25,7 @@ Download Raspbian strech lite
 unzip the file 2018-04-18-raspbian-stretch-lite.zip to 
 2018-04-18-raspbian-stretch-lite.img
 <p>
-Isert into sdcard reader then copy to disk. use lsblk to locate correct device see details here
+Insert into sdcard reader then copy to disk. use lsblk to locate correct device see details here
 <p>
 https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
 <p>
@@ -38,18 +38,18 @@ when copy is complete add the following files
 sudo touch /media/username/boot/ssh<p>
 sudo nano /media/username/boot/wpa_supplicant.conf<p>
 </code>
-Inser your wifi network password and ssis
+Inser your wifi network password and ssid
 edit wpa_supplicant.conf with youre wifi config
 
-country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    ssid="NETWORK-NAME"
-    psk="NETWORK-PASSWORD"
-}
+country=US<p>
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev<p>
+update_config=1<p>
 <p>
+network={<p>
+    ssid="NETWORK-NAME"<p>
+    psk="NETWORK-PASSWORD"<p>
+}<p>
+
 go here for details 
 <p>
 login from term window
@@ -98,7 +98,7 @@ Commands to run the setup script:
 
     # cd /root
 
-    # git clone https://github.com/jpoirier/stratux-setup
+    # git clone https://github.com/specialed1790/pi_zero_w.git
     # cd stratux-setup
 
     # bash stratux-setup.sh
